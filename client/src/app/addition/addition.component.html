@@ -1,0 +1,10 @@
+<form [formGroup]="RegistrationForm">
+    Enter User Name: <input formControlName="userName" type="text"><br>
+    Enter passWord: <input formControlName="passWord" type="text"><br>
+    confirm passWord: <input formControlName="confirmpassWord" type="text"><br>
+    <div *ngIf="isNotmatched">
+        password doent match
+    </div>
+    <button (click)="register() ">Register</button>
+</form>
+
