@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { ForgetPasswordComponent } from './login-form/forget-password/forget-password.component';
 import { AdditionComponent } from './addition/addition.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AdditionComponent } from './addition/addition.component';
     RegistrationFormComponent,
     ForgetPasswordComponent,
     AdditionComponent,
+    HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
