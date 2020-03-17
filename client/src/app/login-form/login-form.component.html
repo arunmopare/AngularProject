@@ -1,5 +1,44 @@
-<form [formGroup]="loginForm">
+<!-- <form [formGroup]="loginForm">
   Enter User Name: <input formControlName="userName" type="text"><br>
   Enter passWord: <input formControlName= "passWord" type="text"><br>
   <button (click)="login()">Login</button>
-</form>
+</form> -->
+
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <h1 align="center" >Log In</h1>
+      <form (ngSubmit)="login()" #f="ngForm" >
+        
+      
+      <div class="user-data">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="useraName" class="form-control" #useraName="ngModel" ngModel name="useraName" required>
+          <span class="help-block" *ngIf="useraName.touched && useraName.invalid">
+            <div class="invalid">please enter Valid user Name</div>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" ngModel name="password" required
+            #password="ngModel">
+          <span class="help-block" *ngIf="password.touched && password.invalid">
+            <div class="invalid">please enter Valid PassWord</div>
+          </span>
+        </div>
+        <button class="btn btn-primary " type="submit" [disabled]="!f.valid">Submit</button>
+        <br> 
+        <br>
+        <br>
+
+       <button class="btn btn-success" routerLink="/registration" routerLinkActive="active" >Sign Up</button>
+        <button class="btn btn-danger" routerLink="/forgot" routerLinkActive="active">Forgot Password</button>
+        
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
